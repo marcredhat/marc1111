@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  creationTimestamp: null
+  name: carts
+spec:
+  gateways:
+  - public-gateway.istio-system
+  - mesh
+  hosts:
+  - carts.marc1111-dev.svc.cluster.local
+  - carts
+  http:
+  - route:
+    - destination:
+        host: carts.marc1111-dev.svc.cluster.local
